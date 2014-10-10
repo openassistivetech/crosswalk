@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "pedestrian_crossing")
+set(pedestrian_crossing_MAINTAINER "simonefonta <simonefonta@todo.todo>")
+set(pedestrian_crossing_DEPRECATED "")
+set(pedestrian_crossing_VERSION "0.0.0")
+set(pedestrian_crossing_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(pedestrian_crossing_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(pedestrian_crossing_BUILDTOOL_DEPENDS "catkin")

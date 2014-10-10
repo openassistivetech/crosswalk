@@ -1,0 +1,40 @@
+TODO List
+
+***Keep in mind the scenario: a blind person can understand where the crosswalk is because he knows it/ he can feel the edge of the sidewalk going down, so he can start walking pointing the right direction, but he might turn a little bit on left/right resulting in missing the other side of the street, especially in large streets***
+
+MAJOR POSSIBLE IMPROVEMENTS to improve the detection:
+
+- Improve the robustness of the system to the different light conditions
+The biggest problem we have now is the situation in which there are 2 areas in the picture, one really bright and one dark (because of shadows from buildings for istance). 
+In this situation the Edge Detection function detects a big object in the brigther area and can't detect the contours properly.
+
+Solutions?
+1) Light equalization:
+We tried an histogram equalization, but the results were not positive because you lose the big difference beetween the white of the lines and the dark of the street, so the contours are not detected correctly.
+2) Shadow removal:
+Apparently, you can't remove the shadows if you have a dynamic video, you should have a not moving camera and have always the same background to obtain good results. We don't know if it's possible to remove shadows in this situation and in real time
+3) Separate the bright and the dark area and run the code on both:
+This may be a possible solution, but be careful, the detected edges then should be merged in order to have the correct informations in the edge between the 2 areas. TODO
+
+MINOR POSSIBLE IMPROVEMENTS
+
+- 3D filtering : planes detection
+The actual 3D filtering is very simple: points under a fixed valued on the Y axis are colored in RED so when they are reprojected they don't create problems for the edge detection. The Y axis points the floor.
+This is a really simple solution that could be improved by detecting floors and keeping just the points from the lowest floor, the ground.
+
+- Problems with shadows / banal example -> http://i.istockimg.com/file_thumbview_approve/29161454/3/stock-photo-29161454-pedestrian-crossing-with-shadow-in-rome-italy.jpg
+Sometimes there might be a long shadow from a traffic light or from people that will cut in half the lines.
+The result is that often the 2 parts in which the line is separated are not big enough for being detected, or the shadow makes them a different shaped object (not a 4-sided one).
+This may be solved in the same way as the previous problem, detecting the edges both in the bright and in the shadow areas and then merging the results.
+
+- Adjusting IMU on the bagfiles
+The starting time of the bagfile is related to some ROS settings that we don't know. It starts at about 1.4 billions, so it saturates the variables. Resetting it to 0 should let you uncomment the accelerometer_cb function.
+
+
+COMPARISONS
+
+It would be good to try different approaches with different computer vision solutions to detect the lines and see what works best
+
+LATER IMPROVEMENTS
+
+- Output for a blind person

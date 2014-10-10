@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multisense_bringup")
+set(multisense_bringup_MAINTAINER "Carnegie Robotics <support@carnegierobotics.com>")
+set(multisense_bringup_DEPRECATED "")
+set(multisense_bringup_VERSION "0.0.0")
+set(multisense_bringup_BUILD_DEPENDS "multisense_ros")
+set(multisense_bringup_RUN_DEPENDS "multisense_ros")
+set(multisense_bringup_BUILDTOOL_DEPENDS "catkin")

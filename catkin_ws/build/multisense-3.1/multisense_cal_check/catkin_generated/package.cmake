@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multisense_cal_check")
+set(multisense_cal_check_MAINTAINER "Carnegie Robotics <support@carnegierobotics.com>")
+set(multisense_cal_check_DEPRECATED "")
+set(multisense_cal_check_VERSION "0.0.0")
+set(multisense_cal_check_BUILD_DEPENDS "multisense_ros")
+set(multisense_cal_check_RUN_DEPENDS "multisense_ros")
+set(multisense_cal_check_BUILDTOOL_DEPENDS "catkin")

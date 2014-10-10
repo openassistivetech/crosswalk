@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multisense_lib")
+set(multisense_lib_MAINTAINER "Carnegie Robotics <support@carnegierobotics.com>")
+set(multisense_lib_DEPRECATED "")
+set(multisense_lib_VERSION "0.0.0")
+set(multisense_lib_BUILD_DEPENDS "libpng12-dev")
+set(multisense_lib_RUN_DEPENDS "libpng12-dev")
+set(multisense_lib_BUILDTOOL_DEPENDS "catkin")

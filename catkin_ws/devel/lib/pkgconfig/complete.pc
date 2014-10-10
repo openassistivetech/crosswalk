@@ -1,0 +1,8 @@
+prefix=/home/drc/catkin_ws/devel
+
+Name: complete
+Description: Description of complete
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/drc/catkin_ws/devel/lib 
+Requires: 

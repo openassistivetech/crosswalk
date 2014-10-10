@@ -1,0 +1,8 @@
+prefix=/home/drc/catkin_ws/devel
+
+Name: canny
+Description: Description of canny
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/drc/catkin_ws/devel/lib 
+Requires: 

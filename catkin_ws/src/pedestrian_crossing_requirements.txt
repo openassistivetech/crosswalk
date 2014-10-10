@@ -1,0 +1,10 @@
+- Install ROS Groovy in your system
+- Copy the groovy.bash file in your home directory, then modify it to point the correct folders: 
+source /opt/ros/groovy/setup.bash should be in the same position if you installed ROS correctly
+source /home/drc/bvi-nav/catkin_ws/devel/setup.bash should become /home/nameofpc/.../catkin_ws/devel/setup.bash, in the catkin workspace in which you have the multisense driver
+
+INCLUDES
+
+Take a look at the CMakeLists.txt file in catkin_ws/src/pedestrian_crossing and make sure you have installed PCL 1.7 and OpenCV.
+If your catkin_ws directory is not under the home  directiory, put the correct path after ~/ here /catkin_ws/...
+

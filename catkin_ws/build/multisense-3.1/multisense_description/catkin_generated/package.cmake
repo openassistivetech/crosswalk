@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multisense_description")
+set(multisense_description_MAINTAINER "Carnegie Robotics <support@carnegierobotics.com>")
+set(multisense_description_DEPRECATED "")
+set(multisense_description_VERSION "0.0.0")
+set(multisense_description_BUILD_DEPENDS "urdf" "xacro")
+set(multisense_description_RUN_DEPENDS "urdf" "xacro")
+set(multisense_description_BUILDTOOL_DEPENDS "catkin")

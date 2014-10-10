@@ -1,0 +1,35 @@
+\subsubsection usage Usage
+\verbatim
+<node name="sl_sgm_cmv4000_imu" pkg="multisense_ros" type="sl_sgm_cmv4000_imu">
+  <param name="resolution" type="str" value="1024x1024x128" />
+  <param name="fps" type="double" value="5.0" />
+  <param name="gain" type="double" value="1.0" />
+  <param name="auto_exposure" type="bool" value="True" />
+  <param name="auto_exposure_max_time" type="double" value="0.5" />
+  <param name="auto_exposure_decay" type="int" value="7" />
+  <param name="auto_exposure_thresh" type="double" value="0.75" />
+  <param name="exposure_time" type="double" value="0.025" />
+  <param name="auto_white_balance" type="bool" value="True" />
+  <param name="auto_white_balance_decay" type="int" value="3" />
+  <param name="auto_white_balance_thresh" type="double" value="0.5" />
+  <param name="white_balance_red" type="double" value="1.0" />
+  <param name="white_balance_blue" type="double" value="1.0" />
+  <param name="stereo_post_filtering" type="double" value="0.75" />
+  <param name="lighting" type="bool" value="False" />
+  <param name="flash" type="bool" value="False" />
+  <param name="led_duty_cycle" type="double" value="0.0" />
+  <param name="motor_speed" type="double" value="0.0" />
+  <param name="network_time_sync" type="bool" value="True" />
+  <param name="imu_samples_per_message" type="int" value="30" />
+  <param name="accelerometer_enabled" type="bool" value="True" />
+  <param name="accelerometer_rate" type="int" value="3" />
+  <param name="accelerometer_range" type="int" value="0" />
+  <param name="gyroscope_enabled" type="bool" value="True" />
+  <param name="gyroscope_rate" type="int" value="3" />
+  <param name="gyroscope_range" type="int" value="0" />
+  <param name="magnetometer_enabled" type="bool" value="True" />
+  <param name="magnetometer_rate" type="int" value="0" />
+  <param name="magnetometer_range" type="int" value="0" />
+</node>
+\endverbatim
+

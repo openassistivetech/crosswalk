@@ -1,0 +1,8 @@
+prefix=/home/drc/catkin_ws/install
+
+Name: multisense_cal_check
+Description: Description of multisense_cal_check
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/drc/catkin_ws/install/lib 
+Requires: multisense_ros

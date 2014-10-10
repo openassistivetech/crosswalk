@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "multisense_ros-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "RawCamData" :depends-on ("_package_RawCamData"))
+    (:file "_package_RawCamData" :depends-on ("_package"))
+    (:file "RawImuData" :depends-on ("_package_RawImuData"))
+    (:file "_package_RawImuData" :depends-on ("_package"))
+    (:file "RawCamConfig" :depends-on ("_package_RawCamConfig"))
+    (:file "_package_RawCamConfig" :depends-on ("_package"))
+    (:file "RawCamCal" :depends-on ("_package_RawCamCal"))
+    (:file "_package_RawCamCal" :depends-on ("_package"))
+    (:file "RawLidarCal" :depends-on ("_package_RawLidarCal"))
+    (:file "_package_RawLidarCal" :depends-on ("_package"))
+    (:file "RawLidarData" :depends-on ("_package_RawLidarData"))
+    (:file "_package_RawLidarData" :depends-on ("_package"))
+    (:file "Histogram" :depends-on ("_package_Histogram"))
+    (:file "_package_Histogram" :depends-on ("_package"))
+    (:file "DeviceInfo" :depends-on ("_package_DeviceInfo"))
+    (:file "_package_DeviceInfo" :depends-on ("_package"))
+  ))

@@ -1,0 +1,43 @@
+With MULTISENSE (you should have installed ROS Groovy first)
+
+Connect the sensor via ethernet, connect the supply and then (T1, T2, T3 are different terminals):
+T1) cd
+source groovy.bash
+make lcm-local
+make multisense-driver (!!! be sure that Multisense was already connected!!!)
+
+T2) cd
+source groovy.bash
+roslaunch multisense_bringup multisense.launch
+
+T3) cd
+source groovy.bash
+cd catkin_ws
+source devel/setup.bash
+rosrun pedestrian_crossing pedestrian_crossing
+
+3 windows appear : 
+Pointcloud viewer
+Original image
+Post-processed image
+
+With ROSBAGS
+
+T1) cd 
+source groovy.bash
+roscore
+
+T2) cd
+source groovy.bash
+cd catkin_ws
+source devel/setup.bash
+rosrun pedestrian_crossing pedestrian_crossing
+
+Only the pointcloud viewer will show up before you start a bagfile
+
+T3) cd
+source groovy.bash
+cd data/bagfiles/pedestrian_crossing/[example..]csail/Very_Good/
+rosbag play filename
+
+Now also the other 2 windows will show up and you can see the code working.

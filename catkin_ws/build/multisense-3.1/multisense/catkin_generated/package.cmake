@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multisense")
+set(multisense_MAINTAINER "Maintained by Carnegie Robotics LLC <support@carnegierobotics.com>")
+set(multisense_DEPRECATED "")
+set(multisense_VERSION "1.0.0")
+set(multisense_BUILD_DEPENDS )
+set(multisense_RUN_DEPENDS "multisense_description" "multisense_bringup" "multisense_ros" "multisense_lib" "multisense_cal_check")
+set(multisense_BUILDTOOL_DEPENDS "catkin")

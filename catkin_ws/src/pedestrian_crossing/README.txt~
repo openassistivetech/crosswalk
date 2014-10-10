@@ -1,0 +1,35 @@
+Pedestrian crossing detection project
+
+Authors: 
+	Simone Fontanesi simonefonta@hotmail.it
+	Alessandro Frigerio afrigerio91@gmail.com
+
+Date : September, 29th 2014
+----------------------------------------------
+
+	CMakeLists
+The project uses OpenCV and PCL libraries.
+	src/
+		pedestrian_crossing.cpp
+main() file, initializes ROS and spin()
+
+		point_cloud_functions.hpp
+Contains the includes of point_cloud_functions.cpp and the sensor height parameter (in meters)
+
+		point_cloud_functions.cpp
+Contains the callback function called in the main file. You can comment/uncomment the point cloud viewer here. Inside the callback, from a sensor_msgs::PointCloud2 input, a pcl::PointCloud<pcl::PointXYZRGB> gets filled with XYZ data with pcl::fromROSMsg. The RGB are stored manually as Bayer color format (BGGR) (note: you will get a warning "RGB not found" in the console, that's because the fromROSMsg function doesn't find the RGB value, but it is stored later manually).
+Then some cv::Mat get filled with the color information. With the organized point cloud, the position of each pixel corresponds to the position in the point cloud. Some points just have the RGB information, without XYZ (if you try to print their  in a file/console, you will get NaN or 0 0 0 if you cast them as double).
+At the end of the callback, the Lines_detection function, described in open_cv_functions.cpp, is called, and applies the OpenCV algorithm to the 3D filtered image, showing the results on the non-filtered image.
+
+		open_cv_functions.hpp
+Contains the includes for open_cv_functions.cpp and the parameters. The distance and area parameters are in meters, with data from the point cloud.
+The MyPoint class is used in the functions for the regroupping section.
+
+		open_cv_functions.cpp
+- Lines_detection (at the end of the file) is the main function, it calls all the other functions that are used on the image.
+- findSquares is the starting function, looks for squares in the image and finds the vertices coordinates in the cloud (using the findClosePoint function if they are not present in the cloud) in order to filter them using the real area. Then it calculates the center position of each non-filtered rectangle and finds it in the cloud, filling a vector of center points. 
+- centers_cleaner function uses the real distances between the centers from the cloud information and filter out the centers that are too close. This is needed because often more than one rectangle is detected on the same crossing line, but we need only 1.
+- centers_group uses a recursive function in order to create groups of center points that are close to each other and its output is the group containing the max number of points, that are detected as the crossing lines (only if the number of points in the group is >= 2).
+Each detected square is drawn in the original image, while only the pedestrian crossing centers (and interpolation lane) are drawn.
+
+This algorithm works also on normal 2D videos, just by adjusting the parameters back to pixel information and using the video as an input instead of the pointcloud and ROS functions.

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "point_cloud_multisense")
+set(point_cloud_multisense_MAINTAINER "simonefonta <simonefonta@todo.todo>")
+set(point_cloud_multisense_DEPRECATED "")
+set(point_cloud_multisense_VERSION "0.0.0")
+set(point_cloud_multisense_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(point_cloud_multisense_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(point_cloud_multisense_BUILDTOOL_DEPENDS "catkin")

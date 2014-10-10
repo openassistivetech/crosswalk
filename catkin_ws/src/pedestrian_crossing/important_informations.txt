@@ -1,0 +1,50 @@
+HOW TO ACCESS THE POINTCLOUDS DATA
+
+
+ROS Pointcloud  (sensor_msgs::PointCloud2)
+
+To translate to PCL 
+	pcl::fromROSMsg(input, *cloud_pcl);
+Where input is the PointCloud2 and cloud_pcl is 
+	pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_pcl(new pcl::PointCloud<pcl::PointXYZRGB>);
+
+With the Multisense's point cloud the rgb data won't automatically fill the PCL point cloud, you have to do it manually. For taking the color information from Pointcloud2 use this:
+
+	int i = 0;
+	for (int h=0; h<input.height; ++h) {
+            for (int w=0; w<input.width; ++w, ++i) {
+				
+				bayer_value = input.data[i * 16 + 12]; 
+	...
+
+input.data[x]  are raw bytes of informations. They are stored in this order : X Y Z RGB, 4 bytes each. x stands for 1 byte
+
+example :
+	input.data[a*16 + 4] will access the Y value of the a-th point
+	input.data[b*16 + 12] will access the RGB value of the b-th point
+
+You can now put the bayer_value as Red_8b_Value (or Green or Blue, depending on the Bayer color coding) in the pcl point cloud.
+
+
+PCL Pointcloud:
+
+cloud->points[i].x    or .y .z  ---> acces one of the coordinates
+cloud->points[i].rgb            ---> contains the RGB value, 32 bits
+
+to fill the RGB value :
+
+	uint32_t rgb_input;
+	rgb_input = ((uint32_t)Red_8b_Value << 16 | (uint32_t)Green_8b_Value << 8 | (uint32_t)Blue__8b_Value); //G
+	cloud_pcl->points[i].rgb = *reinterpret_cast<float*>(&rgb_input); 
+
+So the cloud_pcl->points[i].rgb will be in bits [????????RRRRRRRRGGGGGGGGBBBBBBBB]
+
+
+
+NOTE: The pointcloud we receive is organized, it means that when you reproject it to 2D, the i-th pixel in the Mat correspond to the i-th point in the point cloud, and you can check if that point in the point cloud contains the informations about X Y and Z. Not all the point cloud points do, some only have the RGB value. That's why when we have to find a point in the point cloud we use 
+	findClosePoint(MyPoint point, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud) 
+That finds a close point in the cloud which contains X Y Z informations. It doesn't find the closest possible, but it's a good approximation.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

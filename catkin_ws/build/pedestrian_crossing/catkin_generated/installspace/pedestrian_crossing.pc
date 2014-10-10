@@ -1,0 +1,8 @@
+prefix=/home/drc/catkin_ws/install
+
+Name: pedestrian_crossing
+Description: Description of pedestrian_crossing
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/drc/catkin_ws/install/lib 
+Requires: 

@@ -1,0 +1,22 @@
+Pedestrian crossing detection project
+
+Authors: 
+	Simone Fontanesi simonefonta@hotmail.it
+	Alessandro Frigerio afrigerio91@gmail.com
+
+Date : September, 29th 2014
+----------------------------------------------
+
+FOLDERS EXPLAINATION:
+	canny, point_cloud_multisense
+Auxiliary folder used during the development of the code. 
+	multisense-3.1
+Multisense driver, including organized point clouds topics (/multisense/image_points2_color_organized and /multisense/image_points2_organized). An organized point cloud is very useful because you can easily reproject it to a 2D image.
+Command to start the Multisense (check pedestrian_crossing_launch.txt):
+ in home directory : make lcm-local, make multisense-driver
+ roslaunch multisense_bringup multisense.launch
+	pedestrian_crossing
+Main project folder. Uses /multisense/image_points2_color_organized from the sensor or bagfiles and detects pedestrian crossings. See the README inside that folder for further information.
+To start the project : in catkin_ws directory : source devel/setup.bash, rosrun pedestrian_crossing pedestrian_crossing
+
+----------------------------------------------

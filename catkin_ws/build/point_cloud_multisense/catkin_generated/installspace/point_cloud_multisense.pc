@@ -1,0 +1,8 @@
+prefix=/home/drc/catkin_ws/install
+
+Name: point_cloud_multisense
+Description: Description of point_cloud_multisense
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/drc/catkin_ws/install/lib 
+Requires: 

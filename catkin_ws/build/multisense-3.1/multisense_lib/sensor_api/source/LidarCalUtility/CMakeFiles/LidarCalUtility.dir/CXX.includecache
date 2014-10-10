@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/drc/catkin_ws/src/multisense-3.1/multisense_lib/sensor_api/source/LibMultiSense/MultiSenseChannel.hh
+stdint.h
+-
+string
+-
+vector
+-
+MultiSenseTypes.hh
+/home/drc/catkin_ws/src/multisense-3.1/multisense_lib/sensor_api/source/LibMultiSense/MultiSenseTypes.hh
+
+/home/drc/catkin_ws/src/multisense-3.1/multisense_lib/sensor_api/source/LibMultiSense/MultiSenseTypes.hh
+stdint.h
+-
+string
+-
+vector
+-
+
+/home/drc/catkin_ws/src/multisense-3.1/multisense_lib/sensor_api/source/LidarCalUtility/LidarCalUtility.cc
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+opencv/cv.h
+-
+LibMultiSense/MultiSenseChannel.hh
+-
+

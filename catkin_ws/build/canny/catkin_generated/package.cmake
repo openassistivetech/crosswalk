@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "canny")
+set(canny_MAINTAINER "drc <drc@todo.todo>")
+set(canny_DEPRECATED "")
+set(canny_VERSION "0.0.0")
+set(canny_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(canny_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(canny_BUILDTOOL_DEPENDS "catkin")

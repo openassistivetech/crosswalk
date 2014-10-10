@@ -1,0 +1,19 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~resolution" : \b [str] SensorResolution min: , default: 1280x1024, max: 
+- \b "~fps" : \b [double] FPS min: -std::numeric_limits<double>::infinity(), default: 15.0, max: std::numeric_limits<double>::infinity()
+- \b "~gain" : \b [double] sensor gain min: 1.0, default: 8.0, max: 256.0
+- \b "~auto_exposure" : \b [bool] AutoExposure min: False, default: True, max: True
+- \b "~auto_exposure_max_time" : \b [double] AutoExposureMaxTime min: 0.0, default: 0.0333, max: 0.0333
+- \b "~auto_exposure_decay" : \b [int] AutoExposureDecay min: 1, default: 3, max: 20
+- \b "~auto_exposure_thresh" : \b [double] AutoExposureThresh min: 0.0, default: 0.75, max: 1.0
+- \b "~exposure_time" : \b [double] Exposure min: 0.0, default: 0.01, max: 0.0333
+- \b "~auto_white_balance" : \b [bool] AutoWhiteBalance min: False, default: True, max: True
+- \b "~auto_white_balance_decay" : \b [int] AutoWhiteBalanceDecay min: 1, default: 3, max: 20
+- \b "~auto_white_balance_thresh" : \b [double] AutoWhiteBalanceThresh min: 0.0, default: 0.5, max: 1.0
+- \b "~white_balance_red" : \b [double] WhiteBalanceScaleRed min: 0.25, default: 1.0, max: 4.0
+- \b "~white_balance_blue" : \b [double] WhiteBalanceScaleBlue min: 0.25, default: 1.0, max: 4.0
+- \b "~network_time_sync" : \b [bool] NetworkTimeSynchronization min: False, default: True, max: True
+
